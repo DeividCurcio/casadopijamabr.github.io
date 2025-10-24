@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p1",
+    "title": "Pijama Feminino Conforto",
+    "description": "Pijama feminino em microfibra, super macio. Tamanhos P, M, G.",
+    "price": "R$59,90",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mg1i2kxqqdc7a4.webp",
+    "shopee_url": "https://br.shp.ee/8SyBhgd"
+  },
+  {
+    "id": "p2",
+    "title": "Pijama Masculino Inverno",
+    "description": "Conjunto térmico ideal para noites frias.",
+    "price": "R$79,90",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mg2c8tyy5o9307.webp",
+    "shopee_url": "https://br.shp.ee/8SyBhgd"
+  },
+  {
+    "id": "p3",
+    "title": "Pijama Infantil Divertido",
+    "description": "Pijama infantil colorido e confortável para os pequenos.",
+    "price": "R$49,90",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mg2c8tyo1v5zff.webp",
+    "shopee_url": "https://br.shp.ee/8SyBhgd"
+  }
+]

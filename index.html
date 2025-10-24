@@ -20,6 +20,11 @@
   </header>
 
   <section id="home" class="hero">
+    <div class="texto-movimento">
+      <div class="scroll-text">
+        ⭐ FRETE GRÁTIS para todo Brasil ⭐ Pijamas de qualidade premium ⭐ Entrega rápida via Shopee ⭐ Satisfação garantida ⭐ Siga @full_pijama ⭐ 
+      </div>
+    </div>
     <div class="hero-text">
       <h2>Conforto, Estilo e Qualidade</h2>
       <p>Descubra os pijamas mais fofos e confortáveis da Shopee!</p>
@@ -112,8 +117,31 @@
 
   <footer id="contato">
     <p>📧 contato@casadopijamabr.com | 📱 @casadopijamabr</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/full_pijama?igsh=MXZ2YmM3ZGZsbTk3bQ%3D%3D&utm_source=qr" target="_blank" class="btn-instagram-footer">
+        📱 Siga no Instagram @full_pijama
+      </a>
+    </div>
     <p>© 2025 Casa do Pijama BR - Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Chat widget -->
+  <link rel="stylesheet" href="/chat-widget.css" />
+  <div id="chat-widget" aria-live="polite">
+    <button id="chat-toggle" aria-label="Abrir chat">💬</button>
+    <div id="chat-panel" hidden>
+      <div id="chat-header">
+        <h4>Assistente Casa do Pijama BR</h4>
+        <button id="chat-close" aria-label="Fechar chat">✕</button>
+      </div>
+      <div id="chat-messages" role="log"></div>
+      <form id="chat-form">
+        <input type="text" id="chat-input" placeholder="Como posso ajudar? Pergunte sobre produtos, tamanhos, entrega..." autocomplete="off" />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <script src="/chat-widget.js" defer></script>
 
   <script src="script.js"></script>
 </body>

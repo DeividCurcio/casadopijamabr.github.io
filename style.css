@@ -52,6 +52,41 @@ nav ul li a:hover {
   color: white;
   text-align: center;
   padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.texto-movimento {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.scroll-text {
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  animation: scroll-horizontal 30s linear infinite;
+  padding-right: 100%;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .hero h2 {
@@ -320,4 +355,363 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
+}
+
+.footer-social {
+  margin: 15px 0;
+}
+
+.btn-instagram-footer {
+  display: inline-block;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.btn-instagram-footer:hover {
+  background: linear-gradient(45deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  color: white;
+  text-decoration: none;
+}
+
+/* Chat widget - simples e responsivo */
+#chat-widget {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  font-family: "Poppins", sans-serif;
+}
+
+#chat-toggle {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: all 0.3s;
+}
+
+#chat-toggle:hover {
+  background: #ff1493;
+  transform: scale(1.1);
+}
+
+#chat-panel {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 360px;
+  max-width: calc(100vw - 40px);
+  height: 520px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+#chat-panel[hidden] {
+  display: none !important;
+}
+
+#chat-header {
+  padding: 12px;
+  background: linear-gradient(90deg, #ffb6c1, #ff69b4);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#chat-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#chat-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+#chat-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+#chat-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #fff5f7;
+}
+
+.msg {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.msg.user {
+  justify-content: flex-end;
+}
+
+.msg .bubble {
+  max-width: 75%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.msg.user .bubble {
+  background: #ff69b4;
+  color: white;
+  border-radius: 12px 12px 6px 12px;
+}
+
+.msg.bot .bubble {
+  background: white;
+  color: #222;
+  border: 1px solid #f0dbe6;
+  border-radius: 12px 12px 12px 6px;
+}
+
+.msg img.product-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+#chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+#chat-form input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  font-size: 14px;
+  outline: none;
+}
+
+#chat-form input:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2);
+}
+
+#chat-form button {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+#chat-form button:hover {
+  background: #ff1493;
+}
+
+/* Responsivo para tablet (até 768px) */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .hero {
+    padding: 80px 15px;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .texto-movimento {
+    height: 35px;
+  }
+  
+  .scroll-text {
+    font-size: 14px;
+  }
+  
+  .cupom-section h2 {
+    font-size: 2rem;
+  }
+  
+  .avaliacoes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  header {
+    padding: 10px 20px;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  nav ul li {
+    margin-left: 15px;
+  }
+}
+
+/* Responsivo para celular (até 480px) */
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .avaliacoes-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .hero {
+    padding: 60px 10px;
+  }
+  
+  .hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .texto-movimento {
+    height: 30px;
+    top: 10px;
+  }
+  
+  .scroll-text {
+    font-size: 12px;
+  }
+  
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .cupom-section {
+    padding: 40px 15px;
+  }
+  
+  .cupom-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cupom-texto {
+    font-size: 1.1rem;
+  }
+  
+  .btn-cupom {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+  
+  .produtos, .posts, .avaliacoes {
+    padding: 40px 15px;
+  }
+  
+  .produtos h2, .posts h2, .avaliacoes h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  header {
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 5px 10px;
+  }
+  
+  footer {
+    padding: 15px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .btn-instagram-footer {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+  
+  #chat-panel {
+    width: 94vw;
+    height: 70vh;
+    right: 3vw;
+  }
+  
+  #chat-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
